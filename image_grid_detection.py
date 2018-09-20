@@ -15,8 +15,8 @@ for cnt in cnts:
         continue
 
     x,y,w,h = cv2.boundingRect(cnt)
-    cv2.rectangle(img,(x,y),(x+w,y+h),(0,255,0),2)
-    
+    rect = cv2.rectangle(img,(x,y),(x+w,y+h),(0,255,0),2)
+    cv2.rectangle(thresh2, (x, y), (x + w, y + h), (255,255,255), 2)
 cv2.imshow('clear',thresh2)
 cv2.imshow('sudoku',img)
 cv2.waitKey(0)
